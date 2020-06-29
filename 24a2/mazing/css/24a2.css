@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap");
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  line-height: 1.7;
+  max-width: 880px;
+  margin: 50px auto 50px;
+  padding: 0 12px 0;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  margin: auto;
+}
+
+code {
+  font-family: "IBM Plex Mono", monospace;
+  font-style: italic;
+  background: #f7f3e8; /* Wimborne White */
+  padding: 4px;
+  border-radius: 8px;
+}
+
+pre {
+  overflow: scroll;
+  /* Needs to be important to override the built in theme. I think we can fix
+   * this by exporting the theme as CSS in Hugo  */
+  background: #f7f3e8 !important;
+  padding: 24px;
+}
+
+pre code {
+  padding: 0;
+}
+
+blockquote {
+  background: #f7f3e8; /* Wimborne White */
+  padding: 4px;
+  border-radius: 8px;
+  padding: 16px 40px;
+  margin: 16px 0;
+}
+
+h1, p {
+  text-align: center;
+}
+
+.sidebar > ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* https://every-layout.dev/layouts/sidebar/ */
+.with-sidebar {
+  overflow: hidden;
+}
+
+.with-sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(32px / 2 * -1);
+  align-items: flex-start;
+}
+
+.with-sidebar > * > * {
+  margin: calc(32px / 2);
+  flex-basis: 160px;
+  flex-grow: 1;
+}
+
+.with-sidebar > * > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(75% - 32px);
+}
+
+#landing-sketch {
+  margin-top: 16px;
+}
