@@ -138,14 +138,14 @@ function update(game) {
             bonus = timeRemaining;
 
         }
-        game.setText(`Time: ${timeRemaining}  Score: ${score}`);
+        game.setText(`Time: ${timeRemaining}  Level: ${level}  Score: ${score}`);
     }
     
     if (currentState == GameState.LevelEnd) {
         flashMaze = (flashMaze + 1) % palette.length;
         mazeToGrid(palette[flashMaze]);
         score = score + (level * 10);
-        game.setText(`Time: ${bonus}  Score: ${score}`);
+        game.setText(`Time: ${bonus}  Level: ${level}  Score: ${score}`);
         bonus--;
         if (bonus == 0) {
             currentState = GameState.Play;
@@ -159,7 +159,7 @@ function update(game) {
     }
 
     if (currentState == GameState.GameOver) {
-        game.setText(`GAME OVER  Score: ${score}`);
+        game.setText(`GAME OVER  Level: ${level}  Score: ${score}`);
         game.end();
     }
 }
